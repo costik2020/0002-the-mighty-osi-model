@@ -1,0 +1,20 @@
+[
+  {
+    "question": {
+		"image": "../images/card00-question.png",
+		"para": "What is this?",
+		"options": {
+			"checkA": "This is a rounter",
+			"checkB": "This is a tedy bear",
+			"checkC": "This is a server",
+			"checkD": "This is 36 port switch"
+		}
+	},
+    "answer": {
+		"image": "../images/card00-answer.png",
+		"para": "This is a router."
+
+	}
+  }
+
+]

@@ -1,5 +1,3 @@
-
-
 /*
 ## User's Story
 
@@ -17,6 +15,14 @@
 ## Program pseudocode
 
 - Parse a JSON file and grab all the 10 cards
+	- JSON file will contain an array of card objects
+	- Each card object will have
+		- question object
+			- picture data
+			- paragraph data
+		- answer object
+			- picture data
+			- paragraph data
 - Make an array of objects with that data
 - Loop through that array and ask a question for each card
 	- To ask quesiton use card[0].cardQuestion object
@@ -40,6 +46,42 @@
 - At the end of the 10 cards array display a "Congratiulation" or "Try again" message and the final score in large font..
 - TODO... I will see what I need more...
 */
+
+//----------------------------------------------------------------------
+
+
+//- Parse a JSON file and grab all the 10 cards
+let cards; // Will be an array of cards objects
+
+// Use an XHR object to read the `json` file
+const xhr = new XMLHttpRequest();
+
+try {
+  xhr.open('GET', 'scripts/cards.json');
+
+  xhr.responseType = 'json';
+
+  xhr.addEventListener('load', () => mainData(xhr.response));
+  xhr.addEventListener('error', () => console.error('XHR error'));
+
+  xhr.send();
+
+} catch(error) {
+  console.error(`XHR error ${xhr.status}`);
+}
+//console.log("xhr.status=", xhr.status)
+
+
+// This is the function where all my program will live
+function mainData(data){
+	console.log("data=",data);
+	cards = data;
+	console.log("cards=", cards);
+	console.log("cards.question.image=", cards[0].question.image);
+
+
+
+}
 
 
 
