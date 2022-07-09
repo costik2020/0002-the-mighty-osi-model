@@ -53,6 +53,13 @@
 //- Parse a JSON file and grab all the 10 cards
 let cards; // Will be an array of cards objects
 
+// DOM Manipulation:
+let questionImage=document.querySelector(".questionImage");
+let questionPara=document.querySelector(".questionPara");
+console.log("questionPara=",questionPara);
+
+
+
 // Use an XHR object to read the `json` file
 const xhr = new XMLHttpRequest();
 
@@ -75,13 +82,36 @@ try {
 // This is the function where all my program will live
 function mainData(data){
 	console.log("data=",data);
+	// - Make an array of objects with that data
 	cards = data;
 	console.log("cards=", cards);
-	console.log("cards.question.image=", cards[0].question.image);
+	console.log("cards[0].question.image=", cards[0].question.image);
+	// - Loop through that array and ask a question for each card
+	for (let i=0; i<cards.length; i++){
+		//	- To ask quesiton use cards[0].question object
+		//	- To answer the question use cards[0].answer object
+		questionPara.textContent= cards[0].question.para;
+		console.log("questionPara.textContent=", questionPara.textContent);
+		// Load a new image in my Question areas
+		/*
+		Method:
+		const button = document.querySelector("button");
+		button.setAttribute("name", "helloButton");
+		*/
+
+		//questionImage.setAttribute= cards[0].question.image;
+		questionImage.setAttribute("src",cards[0].question.image);
+		console.log("questionImage=", cards[0].question.image);
+
+
+
+	}
 
 
 
 }
+
+
 
 
 
