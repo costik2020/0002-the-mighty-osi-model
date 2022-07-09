@@ -1,0 +1,20 @@
+
+.osiHeader {
+	font-size: 4em;
+}
+
+
+.osi,
+.answerCard,
+.questionCard,
+.score {
+	background-color: yellow;
+	border: thick solid #32a1ce;
+	width: 100px;
+	height: 100px;
+}
+
+
+
+
+
