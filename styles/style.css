@@ -4,15 +4,87 @@
 }
 
 
-.osi,
-.answerCard,
-.questionCard,
-.score {
+
+.osi {
 	background-color: yellow;
 	border: thick solid #32a1ce;
-	width: 100px;
+	width: 100%;
 	height: 100px;
 }
+
+.answerCard {
+	background-color: green;
+	border: thick solid #32a1ce;
+	width: 100%;
+	height: 100%;
+}
+
+.questionCard {
+	background-color: grey;
+	border: thick solid #32a1ce;
+	width: 100%;
+	height: 200px;
+}
+
+.score {
+	background-color: red;
+	border: thick solid #32a1ce;
+	width: 100%;
+	height: 50px;
+}
+
+
+/*I decided to use grid to make my layout this time*/
+.mainStructure {
+  display: grid;
+  grid-template-areas:
+      "osi answerCard"
+      "osi answerCard"
+      "score answerCard"
+	  "questionCard questionCard";
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+}
+
+.osi {
+  grid-area: osi;
+}
+
+.answerCard {
+  grid-area: answerCard;
+}
+
+.questionCard {
+  grid-area: questionCard;
+}
+
+.score {
+  grid-area: score;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
