@@ -1,15 +1,16 @@
 
 .osiHeader {
 	font-size: 4em;
+	color: blue;
 }
 
 
 
 .osi {
-	background-color: yellow;
+	background-color: blue;
 	border: thick solid #32a1ce;
 	width: 100%;
-	height: 100px;
+	min-height: 100px;
 }
 
 .answerCard {
