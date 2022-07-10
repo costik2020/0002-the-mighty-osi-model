@@ -72,7 +72,16 @@
 }
 
 
+
+
 /*Style the answer card*/
+.answerImage {
+	float: left;
+	margin-right: 1em;
+	/*To hide an image use `display:none`*/
+
+}
+
 
 
 

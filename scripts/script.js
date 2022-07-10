@@ -31,11 +31,7 @@
 	- Properties such as:
 		- questionImage a picture that helps the user to get the context
 		- questionPara some paragraph that puts the question
-		- questionOptions should be the 4 bullet options that the user can chose from like:
-			- OptionA
-			- OptionB
-			- OptionC
-			- OptionD
+
 	- When the user preses `check` button, see if he chose the corect answer.
 		- If corect option:
 			- Then: Make it green
@@ -54,10 +50,14 @@
 let cards; // Will be an array of cards objects
 
 // DOM Manipulation:
+// Grab elements from question card
 let questionImage=document.querySelector(".questionImage");
 let questionPara=document.querySelector(".questionPara");
 console.log("questionPara=",questionPara);
 
+// Grab elements from answer card
+let answerImage=document.querySelector(".answerImage");
+let answerPara=document.querySelector(".answerPara");
 
 
 // Use an XHR object to read the `json` file
@@ -90,7 +90,7 @@ function mainData(data){
 	for (let i=0; i<cards.length; i++){
 		//	- To ask quesiton use cards[0].question object
 		//	- To answer the question use cards[0].answer object
-		questionPara.textContent= cards[0].question.para;
+		questionPara.textContent= cards[i].question.para;
 		//console.log("questionPara.textContent=", questionPara.textContent);
 		// Load a new image in my Question areas
 		/*
@@ -100,21 +100,13 @@ function mainData(data){
 		*/
 
 		//questionImage.setAttribute= cards[0].question.image;
-		questionImage.setAttribute("src",cards[0].question.image);
+		questionImage.setAttribute("src",cards[i].question.image);
 		//console.log("questionImage=", cards[0].question.image);
 
-		// Now I will loop throught the `options` sub object of question obj and write to the DOM
-		let options = cards[i].question.options;
-		console.log("options=",options);
+		// Set answer
+		answerPara.textContent= cards[i].answer.para;
+		answerImage.setAttribute("src",cards[i].answer.image);
 
-		let radioInput;
-		for (option in options){
-			console.log("option=",options[option]);
-
-			radioInput=document.querySelector(`#${option}`);
-			console.log("radioInput=",radioInput);
-			radioInput.textContent= options[option];
-		}
 
 
 	}
