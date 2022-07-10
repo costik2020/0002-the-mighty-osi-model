@@ -65,8 +65,14 @@
 
 
 
+/*Style the question card*/
+.questionImage {
+	float: left;
+	margin-right: 1em;
+}
 
 
+/*Style the answer card*/
 
 
 
