@@ -43,23 +43,26 @@
 - TODO... I will see what I need more...
 */
 
+/*
+Need to implement this:
+
+- Initially there are no pictures or questiosn/answers on the interface
+- The user preses [Start] button
+- Then the start button disapears and the first question appers
+- The user presses [Show Answer!] then the "Show Answer" button dissapears.
+- The answer card will be displayed
+- And the 2 buttons apper the [Correct] button and the [Wrong] button
+- After the user will press one "Correct" or "Wrong"
+	- Then the Answer of the question will disapear
+			-And a new question will appear
+			-And the "Show Answer" button will appear again
+
+*/
+
 //----------------------------------------------------------------------
 
 
 //- Parse a JSON file and grab all the 10 cards
-let cards; // Will be an array of cards objects
-
-// DOM Manipulation:
-// Grab elements from question card
-let questionImage=document.querySelector(".questionImage");
-let questionPara=document.querySelector(".questionPara");
-console.log("questionPara=",questionPara);
-
-// Grab elements from answer card
-let answerImage=document.querySelector(".answerImage");
-let answerPara=document.querySelector(".answerPara");
-
-
 // Use an XHR object to read the `json` file
 const xhr = new XMLHttpRequest();
 
@@ -79,42 +82,165 @@ try {
 //console.log("xhr.status=", xhr.status)
 
 
+
+
+
+
 // This is the function where all my program will live
 function mainData(data){
 	//console.log("data=",data);
+
+
+
+	let cards; // Will be an array of cards objects
+
+	// Set the score variable to zero
+	let score= 0;
+
+	// DOM Manipulation:
+	// Grab elements from question card
+	let questionImage=document.querySelector(".questionImage");
+	let questionPara=document.querySelector(".questionPara");
+	console.log("questionPara=",questionPara);
+
+	// Grab elements from answer card
+	let answerImage=document.querySelector(".answerImage");
+	let answerPara=document.querySelector(".answerPara");
+
+	//Grab the Buttons
+	let startBtn= document.querySelector(".startBtn");
+	let showAnswerBtn= document.querySelector(".showAnswerBtn");
+	let correctBtn= document.querySelector(".correctBtn");
+	let wrongBtn= document.querySelector(".wrongBtn");
+
+	// When the interface initially starts, make all the buttons hidden.
+	showAnswerBtn.style.display="none";
+	correctBtn.style.display="none";
+	correctBtn.style.display="none";
+	wrongBtn.style.display="none";
+
+
+
 	// - Make an array of objects with that data
 	cards = data;
+	// The program has reference to a card using a cardIndex variable
+	let cardIndex = 0;
+
 	console.log("cards=", cards);
 	//console.log("cards[0].question.image=", cards[0].question.image);
-	// - Loop through that array and ask a question for each card
-	for (let i=0; i<cards.length; i++){
-		//	- To ask quesiton use cards[0].question object
-		//	- To answer the question use cards[0].answer object
-		questionPara.textContent= cards[i].question.para;
-		//console.log("questionPara.textContent=", questionPara.textContent);
-		// Load a new image in my Question areas
-		/*
-		Method:
-		const button = document.querySelector("button");
-		button.setAttribute("name", "helloButton");
-		*/
+	//startBtn.addEventListener("click",()=>{console.log("clicked!!!")});
 
-		//questionImage.setAttribute= cards[0].question.image;
-		questionImage.setAttribute("src",cards[i].question.image);
-		//console.log("questionImage=", cards[0].question.image);
+	// Start looping throgh the object of questions and answers
+	startBtn.addEventListener("click",function(){
+		console.log("cards inside moveThroughCards() function =", cards);
+		startBtn.style.display="none";
+		showAnswerBtn.style.display="block";
+		// - Loop through that array and ask a question for each card
 
-		// Set answer
-		answerPara.textContent= cards[i].answer.para;
-		answerImage.setAttribute("src",cards[i].answer.image);
+			//	- To ask quesiton use cards[0].question object
+			//	- To answer the question use cards[0].answer object
+			questionPara.textContent= cards[cardIndex].question.para;
+			//console.log("questionPara.textContent=", questionPara.textContent);
+
+			// Load a new image in my Question areas
+			//questionImage.setAttribute= cards[0].question.image;
+			questionImage.setAttribute("src",cards[cardIndex].question.image);
+			//console.log("questionImage=", cards[0].question.image);
+
+			/*
+			- The user presses [Show Answer!] then the "Show Answer" button dissapears.
+			- The answer card will be displayed
+			- And the 2 buttons apper the [Correct] button and the [Wrong] button
+			*/
+			showAnswerBtn.addEventListener("click",function(){
+
+
+				// Set answer
+				answerPara.textContent= cards[cardIndex].answer.para;
+				answerImage.setAttribute("src",cards[cardIndex].answer.image);
+
+				// Make [Show Answer] button disappear
+				showAnswerBtn.style.display="none";
+
+				// - And the 2 buttons apper the [Correct] button and the [Wrong] button
+				correctBtn.style.display="block";
+				wrongBtn.style.display="block";
+
+				/*
+				- After the user will press one "Correct" or "Wrong"
+					- Then the Answer of the question will disapear
+							-And a new question will appear
+							-And the "Show Answer" button will appear again
+
+				*/
+				correctBtn.addEventListener("click", function(){
+					// Set answer
+					answerPara.textContent= " ";
+					answerImage.setAttribute("src"," ");
+
+					//Set question to nothing
+					questionPara.textContent= " ";
+					questionImage.setAttribute("src", " ");
+
+					// Remove the [Correct] and [Wrong] buttons
+					correctBtn.style.display="none";
+					wrongBtn.style.display="none";
+
+					// Update the score
+					score = score + 1;
+
+					//Increase the card index
+					cardIndex++;
+
+					//Here I need to call a function that will render the next question card
+					// initialFrame()
+
+				});
+
+				wrongBtn.addEventListener("click", function(){
+					// Set answer
+					answerPara.textContent= " ";
+					answerImage.setAttribute("src"," ");
+
+					//Set question to nothing
+					questionPara.textContent= " ";
+					questionImage.setAttribute("src", " ");
+
+					// Remove the [Correct] and [Wrong] buttons
+					correctBtn.style.display="none";
+					wrongBtn.style.display="none";
+
+					// Update the score
+					score = score - 1;
+
+					//Increase the card index
+					cardIndex++;
+
+					//Here I need to call a function that will render the next question card
+					// initialFrame()
 
 
 
-	}
+				});
+
+
+			});
+
+
+
+
+
+	});
+
+
 
 
 
 }
 
+
+
+//
 
 
 

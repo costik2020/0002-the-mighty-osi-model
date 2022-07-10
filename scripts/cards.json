@@ -2,13 +2,36 @@
   {
     "question": {
 		"image": "../images/card00-question.png",
-		"para": "At what OSI layer does a Router do its job?"
+		"para": "At what OSI layer does a Router live?"
 	},
     "answer": {
 		"image": "../images/card00-answer.png",
 		"para": "A Rounter can be found at layer 3 aka Network layer."
 
 	}
+  },
+  {
+	"question": {
+	  "image": "../images/card00-question.png",
+	  "para": "Question2.....?"
+  },
+	"answer": {
+	  "image": "../images/card00-answer.png",
+	  "para": "Answer2...."
+
   }
+},
+{
+  "question": {
+	"image": "../images/card00-question.png",
+	"para": "Question3.....?"
+},
+  "answer": {
+	"image": "../images/card00-answer.png",
+	"para": "Answer3...."
+
+}
+}
+
 
 ]
