@@ -62,6 +62,40 @@ Need to implement this:
 //----------------------------------------------------------------------
 
 
+
+	let cards; // Will be an array of cards objects
+
+	// Set the score variable to zero
+	let score= 0;
+
+	// DOM Manipulation:
+	// Grab elements from question card
+	let questionImage=document.querySelector(".questionImage");
+	let questionPara=document.querySelector(".questionPara");
+	console.log("questionPara=",questionPara);
+
+	// Grab elements from answer card
+	let answerImage=document.querySelector(".answerImage");
+	let answerPara=document.querySelector(".answerPara");
+
+	//Grab the Buttons
+	let startBtn= document.querySelector(".startBtn");
+	let showAnswerBtn= document.querySelector(".showAnswerBtn");
+	let correctBtn= document.querySelector(".correctBtn");
+	let wrongBtn= document.querySelector(".wrongBtn");
+
+	// When the interface initially starts, make all the buttons hidden.
+	showAnswerBtn.style.display="none";
+	correctBtn.style.display="none";
+	correctBtn.style.display="none";
+	wrongBtn.style.display="none";
+
+	// The program has reference to a card using a cardIndex variable
+	let cardIndex = 0;
+
+
+
+
 //- Parse a JSON file and grab all the 10 cards
 // Use an XHR object to read the `json` file
 const xhr = new XMLHttpRequest();
@@ -92,47 +126,28 @@ function mainData(data){
 
 
 
-	let cards; // Will be an array of cards objects
-
-	// Set the score variable to zero
-	let score= 0;
-
-	// DOM Manipulation:
-	// Grab elements from question card
-	let questionImage=document.querySelector(".questionImage");
-	let questionPara=document.querySelector(".questionPara");
-	console.log("questionPara=",questionPara);
-
-	// Grab elements from answer card
-	let answerImage=document.querySelector(".answerImage");
-	let answerPara=document.querySelector(".answerPara");
-
-	//Grab the Buttons
-	let startBtn= document.querySelector(".startBtn");
-	let showAnswerBtn= document.querySelector(".showAnswerBtn");
-	let correctBtn= document.querySelector(".correctBtn");
-	let wrongBtn= document.querySelector(".wrongBtn");
-
-	// When the interface initially starts, make all the buttons hidden.
-	showAnswerBtn.style.display="none";
-	correctBtn.style.display="none";
-	correctBtn.style.display="none";
-	wrongBtn.style.display="none";
-
-
-
 	// - Make an array of objects with that data
 	cards = data;
-	// The program has reference to a card using a cardIndex variable
-	let cardIndex = 0;
+
 
 	console.log("cards=", cards);
 	//console.log("cards[0].question.image=", cards[0].question.image);
 	//startBtn.addEventListener("click",()=>{console.log("clicked!!!")});
 
+	console.log("cardIndex= before initialFrame() call", cardIndex);
+	// Call the initialFrame() here.
+	initialFrame();
+
+
+
+}
+
+
+// For each cart to be displayed this function will be callsed
+function initialFrame(){
 	// Start looping throgh the object of questions and answers
 	startBtn.addEventListener("click",function(){
-		console.log("cards inside moveThroughCards() function =", cards);
+		//console.log("cards inside moveThroughCards() function =", cards);
 		startBtn.style.display="none";
 		showAnswerBtn.style.display="block";
 		// - Loop through that array and ask a question for each card
@@ -192,8 +207,14 @@ function mainData(data){
 					//Increase the card index
 					cardIndex++;
 
+					// Lets try something:
+					startBtn.style.display="block";
+
+					console.log("cardIndex= inside correctBtn.addEventListener()", cardIndex);
+
 					//Here I need to call a function that will render the next question card
 					// initialFrame()
+					initialFrame();
 
 				});
 
@@ -216,8 +237,13 @@ function mainData(data){
 					//Increase the card index
 					cardIndex++;
 
+					// Lets try something:
+					startBtn.style.display="block";
+
+
 					//Here I need to call a function that will render the next question card
 					// initialFrame()
+					initialFrame();
 
 
 
@@ -234,13 +260,8 @@ function mainData(data){
 
 
 
-
-
 }
 
-
-
-//
 
 
 
