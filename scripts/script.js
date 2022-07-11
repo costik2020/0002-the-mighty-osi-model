@@ -89,7 +89,7 @@ Need to implement this:
 	let wrongBtn= document.querySelector(".wrongBtn");
 
 	//Grab the score element
-	let scoreElement = document.querySelector(".score");
+	let scoreElement = document.querySelector(".scoreNumber");
 
 	// When the interface initially starts, make all the buttons hidden.
 	showAnswerBtn.style.display="none";
@@ -159,6 +159,10 @@ function initialFrame(){
 	// Start looping throgh the object of questions and answers
 	startBtn.addEventListener("click",showCard);
 
+	// Change the text content of the [Start] button to make more sense
+	if (cardIndex !== 0){
+		startBtn.textContent="Next Question";
+	}
 
 
 }
@@ -313,7 +317,14 @@ function displayFinalMessage(){
 	startBtn.style.display="none";
 
 	// Display the "Congratulations" or "Try Again" message based on score
-	questionPara.textContent= "GAME OVER";
+	//questionPara.textContent= "GAME OVER";
+
+	if (score <= cards.length/2){
+		questionPara.textContent= `Try Again! Your score is low!`;
+	}else{
+		questionPara.textContent= `Congratiulation! Your score is high!`;
+	}
+
 	console.log("game over");
 }
 
