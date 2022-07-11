@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>test123</title>
+	</head>
+	<body>
+		<h1>Testing...</h1>
+		<button type="button" name="button" class="button">Click me</button>
+
+		<script>
+			console.log("test");
+			let number;
+			number=0;
+			let button= document.querySelector(".button");
+			// Tried cloning the element but it doesn't work:
+			//var clone = element.cloneNode(true);
+			//let buttonClone = button.cloneNode(true);
+
+			// If I pass an anonymous function to addEventListener, then
+			// removeEventListener() method will not work, becasue an
+			// anonymous function is not passed by reference but it is an
+			// actual new object every time is called
+			button.addEventListener("click",handlerCount);
+
+
+
+
+			function handlerCount(){
+				number++;
+				console.log("you cliked me "+number+" times");
+				// It actually works, it removes the event listener
+				button.removeEventListener("click",handlerCount);
+				
+
+			}
+
+
+		</script>
+	</body>
+</html>
+

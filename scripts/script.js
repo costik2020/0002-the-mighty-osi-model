@@ -118,6 +118,10 @@ try {
 
 
 
+// SLICE MY PROGRAM INTO MULTIPLE FUNCTIONS
+// BECAUSE I NEED TO USE NORMAL FUNCTIONS WITH `addEventListener()`
+// IF I WANT TO REMOVE THE EVENT LISTENER ANYWHERE I WANT
+// AND BECAUSE YOU CAN'T REMOVE AN EVENT LISTENER WITH AN anonymous FUNCTION BEING PASSED TO addEventListener().. long story..
 
 
 // This is the function where all my program will live
@@ -146,117 +150,7 @@ function mainData(data){
 // For each cart to be displayed this function will be callsed
 function initialFrame(){
 	// Start looping throgh the object of questions and answers
-	startBtn.addEventListener("click",function(){
-		//console.log("cards inside moveThroughCards() function =", cards);
-		startBtn.style.display="none";
-		showAnswerBtn.style.display="block";
-		// - Loop through that array and ask a question for each card
-
-			//	- To ask quesiton use cards[0].question object
-			//	- To answer the question use cards[0].answer object
-			questionPara.textContent= cards[cardIndex].question.para;
-			//console.log("questionPara.textContent=", questionPara.textContent);
-
-			// Load a new image in my Question areas
-			//questionImage.setAttribute= cards[0].question.image;
-			questionImage.setAttribute("src",cards[cardIndex].question.image);
-			//console.log("questionImage=", cards[0].question.image);
-
-			/*
-			- The user presses [Show Answer!] then the "Show Answer" button dissapears.
-			- The answer card will be displayed
-			- And the 2 buttons apper the [Correct] button and the [Wrong] button
-			*/
-			showAnswerBtn.addEventListener("click",function(){
-
-
-				// Set answer
-				answerPara.textContent= cards[cardIndex].answer.para;
-				answerImage.setAttribute("src",cards[cardIndex].answer.image);
-
-				// Make [Show Answer] button disappear
-				showAnswerBtn.style.display="none";
-
-				// - And the 2 buttons apper the [Correct] button and the [Wrong] button
-				correctBtn.style.display="block";
-				wrongBtn.style.display="block";
-
-				/*
-				- After the user will press one "Correct" or "Wrong"
-					- Then the Answer of the question will disapear
-							-And a new question will appear
-							-And the "Show Answer" button will appear again
-
-				*/
-				correctBtn.addEventListener("click", function(){
-					// Set answer
-					answerPara.textContent= " ";
-					answerImage.setAttribute("src"," ");
-
-					//Set question to nothing
-					questionPara.textContent= " ";
-					questionImage.setAttribute("src", " ");
-
-					// Remove the [Correct] and [Wrong] buttons
-					correctBtn.style.display="none";
-					wrongBtn.style.display="none";
-
-					// Update the score
-					score = score + 1;
-
-					//Increase the card index
-					cardIndex++;
-
-					// Lets try something:
-					startBtn.style.display="block";
-
-					console.log("cardIndex= inside correctBtn.addEventListener()", cardIndex);
-
-					//Here I need to call a function that will render the next question card
-					// initialFrame()
-					initialFrame();
-
-				});
-
-				wrongBtn.addEventListener("click", function(){
-					// Set answer
-					answerPara.textContent= " ";
-					answerImage.setAttribute("src"," ");
-
-					//Set question to nothing
-					questionPara.textContent= " ";
-					questionImage.setAttribute("src", " ");
-
-					// Remove the [Correct] and [Wrong] buttons
-					correctBtn.style.display="none";
-					wrongBtn.style.display="none";
-
-					// Update the score
-					score = score - 1;
-
-					//Increase the card index
-					cardIndex++;
-
-					// Lets try something:
-					startBtn.style.display="block";
-
-
-					//Here I need to call a function that will render the next question card
-					// initialFrame()
-					initialFrame();
-
-
-
-				});
-
-
-			});
-
-
-
-
-
-	});
+	startBtn.addEventListener("click",showCard);
 
 
 
@@ -264,17 +158,131 @@ function initialFrame(){
 
 
 
+// This function will be run each time the user presses the START button
+function showCard(){
+	//console.log("cards inside moveThroughCards() function =", cards);
+	startBtn.style.display="none";
+	showAnswerBtn.style.display="block";
+	// - Loop through that array and ask a question for each card
+
+		//	- To ask quesiton use cards[0].question object
+		//	- To answer the question use cards[0].answer object
+		questionPara.textContent= cards[cardIndex].question.para;
+		//console.log("questionPara.textContent=", questionPara.textContent);
+
+		// Load a new image in my Question areas
+		//questionImage.setAttribute= cards[0].question.image;
+		questionImage.setAttribute("src",cards[cardIndex].question.image);
+		//console.log("questionImage=", cards[0].question.image);
+
+		/*
+		- The user presses [Show Answer!] then the "Show Answer" button dissapears.
+		- The answer card will be displayed
+		- And the 2 buttons apper the [Correct] button and the [Wrong] button
+		*/
+		showAnswerBtn.addEventListener("click",showMeTheAnswer);
+
+
+
+}
+
+
+
+// This function will show me the answer card
+function showMeTheAnswer(){
+
+
+	// Set answer
+	answerPara.textContent= cards[cardIndex].answer.para;
+	answerImage.setAttribute("src",cards[cardIndex].answer.image);
+
+	// Make [Show Answer] button disappear
+	showAnswerBtn.style.display="none";
+
+	// - And the 2 buttons apper the [Correct] button and the [Wrong] button
+	correctBtn.style.display="block";
+	wrongBtn.style.display="block";
+
+	/*
+	- After the user will press one "Correct" or "Wrong"
+		- Then the Answer of the question will disapear
+				-And a new question will appear
+				-And the "Show Answer" button will appear again
+
+	*/
+	correctBtn.addEventListener("click", correctAnswer);
+
+	wrongBtn.addEventListener("click", wrongAnswer);
+
+
+}
+
+
+// Correct answer:
+function correctAnswer(){
+	// Set answer
+	answerPara.textContent= " ";
+	answerImage.setAttribute("src"," ");
+
+	//Set question to nothing
+	questionPara.textContent= " ";
+	questionImage.setAttribute("src", " ");
+
+	// Remove the [Correct] and [Wrong] buttons
+	correctBtn.style.display="none";
+	wrongBtn.style.display="none";
+
+	// Update the score
+	score = score + 1;
+
+	//Increase the card index
+	cardIndex++;
+
+	// Lets try something:
+	startBtn.style.display="block";
+
+	console.log("cardIndex= inside correctBtn.addEventListener()", cardIndex);
+
+	//Here I need to call a function that will render the next question card
+	// initialFrame()
+	initialFrame();
+
+}
 
 
 
 
+// Wrong answer function
+function wrongAnswer(){
+	// Set answer
+	answerPara.textContent= " ";
+	answerImage.setAttribute("src"," ");
+
+	//Set question to nothing
+	questionPara.textContent= " ";
+	questionImage.setAttribute("src", " ");
+
+	// Remove the [Correct] and [Wrong] buttons
+	correctBtn.style.display="none";
+	wrongBtn.style.display="none";
+
+	// Update the score
+	score = score - 1;
+
+	//Increase the card index
+	cardIndex++;
+
+	// Lets try something:
+	startBtn.style.display="block";
+
+
+	//Here I need to call a function that will render the next question card
+	// initialFrame()
+	initialFrame();
 
 
 
-
-
-
-
+}
 
 
 
