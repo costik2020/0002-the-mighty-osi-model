@@ -62,8 +62,12 @@ Need to implement this:
 //----------------------------------------------------------------------
 
 
+	// Declare and define some global variables
 
 	let cards; // Will be an array of cards objects
+
+	// The program has reference to a card using a cardIndex variable
+	let cardIndex = 0;
 
 	// Set the score variable to zero
 	let score= 0;
@@ -84,14 +88,17 @@ Need to implement this:
 	let correctBtn= document.querySelector(".correctBtn");
 	let wrongBtn= document.querySelector(".wrongBtn");
 
+	//Grab the score element
+	let scoreElement = document.querySelector(".score");
+
 	// When the interface initially starts, make all the buttons hidden.
 	showAnswerBtn.style.display="none";
 	correctBtn.style.display="none";
 	correctBtn.style.display="none";
 	wrongBtn.style.display="none";
 
-	// The program has reference to a card using a cardIndex variable
-	let cardIndex = 0;
+	// Initiate the score elemet
+	scoreElement.textContent= score;
 
 
 
@@ -124,7 +131,7 @@ try {
 // AND BECAUSE YOU CAN'T REMOVE AN EVENT LISTENER WITH AN anonymous FUNCTION BEING PASSED TO addEventListener().. long story..
 
 
-// This is the function where all my program will live
+// This is the function where all my program will "live"
 function mainData(data){
 	//console.log("data=",data);
 
@@ -234,6 +241,7 @@ function correctAnswer(){
 
 	// Update the score
 	score = score + 1;
+	scoreElement.textContent= score;
 
 	//Increase the card index
 	cardIndex++;
@@ -245,7 +253,7 @@ function correctAnswer(){
 
 	//Here I need to call a function that will render the next question card
 	// initialFrame()
-	initialFrame();
+	checkForEndOfcardsArray();
 
 }
 
@@ -268,6 +276,7 @@ function wrongAnswer(){
 
 	// Update the score
 	score = score - 1;
+	scoreElement.textContent= score;
 
 	//Increase the card index
 	cardIndex++;
@@ -278,7 +287,7 @@ function wrongAnswer(){
 
 	//Here I need to call a function that will render the next question card
 	// initialFrame()
-	initialFrame();
+	checkForEndOfcardsArray();
 
 
 
@@ -286,7 +295,27 @@ function wrongAnswer(){
 
 
 
+// Check if I am at the end of the array
+function checkForEndOfcardsArray(){
+	if (cardIndex < cards.length){
+		initialFrame();
+	}else{
+		displayFinalMessage();
+	}
+}
 
+
+
+
+// This function will display the final message for the user
+function displayFinalMessage(){
+	// Stop the user becasue is at the end:
+	startBtn.style.display="none";
+
+	// Display the "Congratulations" or "Try Again" message based on score
+	questionPara.textContent= "GAME OVER";
+	console.log("game over");
+}
 
 
 
