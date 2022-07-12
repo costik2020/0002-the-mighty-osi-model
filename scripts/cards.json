@@ -30,7 +30,84 @@
 	"image": "../images/card00-answer.png",
 	"para": "Answer3...."
 
-}
+	}
+},
+{
+  "question": {
+	"image": "../images/card00-question.png",
+	"para": "Question4.....?"
+},
+  "answer": {
+	"image": "../images/card00-answer.png",
+	"para": "Answer4...."
+
+	}
+},
+{
+  "question": {
+	"image": "../images/card00-question.png",
+	"para": "Question5.....?"
+},
+  "answer": {
+	"image": "../images/card00-answer.png",
+	"para": "Answer5...."
+
+	}
+},
+{
+  "question": {
+	"image": "../images/card00-question.png",
+	"para": "Question6.....?"
+},
+  "answer": {
+	"image": "../images/card00-answer.png",
+	"para": "Answer6...."
+
+	}
+},
+{
+  "question": {
+	"image": "../images/card00-question.png",
+	"para": "Question7.....?"
+},
+  "answer": {
+	"image": "../images/card00-answer.png",
+	"para": "Answer7...."
+
+	}
+},
+{
+  "question": {
+	"image": "../images/card00-question.png",
+	"para": "Question8.....?"
+},
+  "answer": {
+	"image": "../images/card00-answer.png",
+	"para": "Answer8...."
+
+	}
+},
+{
+  "question": {
+	"image": "../images/card00-question.png",
+	"para": "Question9.....?"
+},
+  "answer": {
+	"image": "../images/card00-answer.png",
+	"para": "Answer9...."
+
+	}
+},
+{
+  "question": {
+	"image": "../images/card00-question.png",
+	"para": "Question10.....?"
+},
+  "answer": {
+	"image": "../images/card00-answer.png",
+	"para": "Answer10...."
+
+	}
 }
 
 
