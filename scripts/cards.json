@@ -12,45 +12,45 @@
   },
   {
 	"question": {
-	  "image": "../images/card00-question.png",
-	  "para": "Question2.....?"
+	  "image": "../images/card01_cisco_switch.jpg",
+	  "para": "At what layer of the OSI Model does a Switch work?. And why is found at that layer?"
   },
 	"answer": {
-	  "image": "../images/card00-answer.png",
-	  "para": "Answer2...."
+	  "image": "../images/card01_answer_switch.jpg",
+	  "para": "A Switch can be found at Layer 2 also known as the Data Link Laywer. It is found at that layer becasue as A switch uses MAC addresses to know where to send a frame of data."
 
   }
 },
 {
   "question": {
-	"image": "../images/card00-question.png",
-	"para": "Question3.....?"
+	"image": "../images/card02_nic_network_interface_card.jpg",
+	"para": "At what layer of OSI does a NIC operate?"
 },
   "answer": {
-	"image": "../images/card00-answer.png",
-	"para": "Answer3...."
+	"image": "../images/card02_nic_network_interface_card.jpg",
+	"para": "A NIC (Network Interface Card) usually operates at layer 2 Data Link layer of OSI Model."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card00-question.png",
-	"para": "Question4.....?"
+	"image": "../images/card03_firewall.png",
+	"para": "At what layer of OSI Model does a Firewall backbone device operates??"
 },
   "answer": {
-	"image": "../images/card00-answer.png",
-	"para": "Answer4...."
+	"image": "../images/card03_answer_firewall.png",
+	"para": "Since firewalls essentially filter data, the answer depends on what kind of filtering you do. \n If you filter based on IP address (for example), you can say that  your firewall is filtering at Layer 3. \n If you filter specific ports,  you can say you're filtering at Layer 4. \n If your firewall inspects  specific protocol states or data, you can say it operates at Layer 7."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card00-question.png",
-	"para": "Question5.....?"
+	"image": "../images/card04_modem600px.png",
+	"para": "At which layer does a Modem operate?"
 },
   "answer": {
-	"image": "../images/card00-answer.png",
-	"para": "Answer5...."
+	"image": "../images/card04_modem600px.png",
+	"para": "Usually a Modem will operate at Layer 1 of OSI. In more detail a Modem will Modulate digital signals to analog signals when sending bits and a Modem will Demodulate analog signals to digital signals when receiving bits."
 
 	}
 },
