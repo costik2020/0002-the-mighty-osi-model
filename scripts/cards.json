@@ -56,56 +56,56 @@
 },
 {
   "question": {
-	"image": "../images/card00-question.png",
-	"para": "Question6.....?"
+	"image": "../images/card_05_pdu_layers.jpg",
+	"para": "At what OSI layer is a Frame PDU processed?"
 },
   "answer": {
-	"image": "../images/card00-answer.png",
-	"para": "Answer6...."
+	"image": "../images/card05_wifi_frame_my_diagram.jpg",
+	"para": "A frame can be found at Layer 2, Data-Link layer."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card00-question.png",
-	"para": "Question7.....?"
+	"image": "../images/card06_packet.jpg",
+	"para": "What network backbone device manages the IP packets PDUs inside a network?"
 },
   "answer": {
-	"image": "../images/card00-answer.png",
-	"para": "Answer7...."
+	"image": "../images/card00-question.png",
+	"para": "That would be a Router."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card00-question.png",
-	"para": "Question8.....?"
+	"image": "../images/card_07_tcp_three_way_handshake.jpg",
+	"para": "At what layer is a TCP segment PDU created?"
 },
   "answer": {
-	"image": "../images/card00-answer.png",
-	"para": "Answer8...."
+	"image": "../images/card_05_pdu_layers.jpg",
+	"para": "A TCP segments are found at the Transport layer."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card00-question.png",
-	"para": "Question9.....?"
+	"image": "../images/card09_encrypt_presentation_layer.jpg",
+	"para": "At what layer data encrypted and it is scrumbled to provide security against hackers?"
 },
   "answer": {
-	"image": "../images/card00-answer.png",
-	"para": "Answer9...."
+	"image": "../images/card09_encrypt_presentation_layer.jpg",
+	"para": "At layer 6 - Presentation Layer of OSI"
 
 	}
 },
 {
   "question": {
-	"image": "../images/card00-question.png",
-	"para": "Question10.....?"
+	"image": "../images/card_09_hub_device.png",
+	"para": "What is a Hub networking device and at what OSI layer is found operating?"
 },
   "answer": {
-	"image": "../images/card00-answer.png",
-	"para": "Answer10...."
+	"image": "../images/card_09_hub_device.png",
+	"para": "A hub device clones all the data that it recives and it will send it out on all its ports. You could say that a Hub is a bits cloning machine. It operates at layer 1 the physical OSI layer."
 
 	}
 }
