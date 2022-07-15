@@ -2,12 +2,35 @@ body {
 	background-color: #0099cc;
 }
 
+
+
 .osiHeader {
 	font-size: 4em;
 	color: #ffd700;
 }
 
+/*Style the OSI layers*/
+.osiLayers {
+	border: thick solid #66ccff;
+	display: flex;
 
+
+
+}
+
+.osiLayersNames,
+.osiLayersNumbers{
+	border: thick solid #66ccff;
+	flex-grow: 1;
+}
+
+.osiLayersNames div,
+.osiLayersNumbers div{
+	border: thick solid white;
+	color: #ffd700;
+	font-size: 2em;
+	min-width: 4.5em;
+}
 
 .osi {
 	background-color: #66ccff;
@@ -16,6 +39,9 @@ body {
 	min-height: 100px;
 }
 
+
+
+
 .answerCard {
 	background-color: #99ccff;
 	border: thick solid #32a1ce;
@@ -23,12 +49,7 @@ body {
 	height: 100%;
 }
 
-.questionCard {
-	background-color: #3399ff;
-	border: thick solid #32a1ce;
-	width: 100%;
-	height: 200px;
-}
+
 
 .score {
 	background-color: #0099ff;
@@ -74,6 +95,20 @@ body {
 	margin-right: 1em;
 }
 
+.questionCard {
+	background-color: #3399ff;
+	border: thick solid #32a1ce;
+	width: 100%;
+	height: 200px;
+}
+
+/*Style the buttons*/
+.allTheButtons{
+	border: thick solid black;
+	/*position: fixed;
+	top: 50px;
+	left: 0;*/
+}
 
 
 
