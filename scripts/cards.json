@@ -13,11 +13,11 @@
   {
 	"question": {
 	  "image": "../images/card01_cisco_switch.jpg",
-	  "para": "At what layer of the OSI Model does a Switch work?. And why is found at that layer?"
+	  "para": "At what layer of the OSI Model does a Switch work? And why is found at that layer?"
   },
 	"answer": {
 	  "image": "../images/card01_answer_switch.jpg",
-	  "para": "A Switch can be found at Layer 2 also known as the Data Link Laywer. It is found at that layer becasue as A switch uses MAC addresses to know where to send a frame of data."
+	  "para": "A Switch can be found at Layer 2 also known as the Data Link Laywer. It is found at that layer becasue as a switch it is using MAC addresses to know where to send a frame of data."
 
   }
 },
@@ -35,7 +35,7 @@
 {
   "question": {
 	"image": "../images/card03_firewall.png",
-	"para": "At what layer of OSI Model does a Firewall backbone device operates??"
+	"para": "At what layer of OSI Model does a Firewall backbone device operates?"
 },
   "answer": {
 	"image": "../images/card03_answer_firewall.png",
@@ -50,7 +50,7 @@
 },
   "answer": {
 	"image": "../images/card04_modem600px.png",
-	"para": "Usually a Modem will operate at Layer 1 of OSI. In more detail a Modem will Modulate digital signals to analog signals when sending bits and a Modem will Demodulate analog signals to digital signals when receiving bits."
+	"para": "Usually a Modem will operate at Layer 1 of OSI. In more detail a Modem will Modulate digital signals to analog signals when sending bits and a Modem will Demodulate analog signals to digital signals when receiving bits from the ISP cable (coaxial cable/dsl cable/fiber cable)."
 
 	}
 },
@@ -90,7 +90,7 @@
 {
   "question": {
 	"image": "../images/card09_encrypt_presentation_layer.jpg",
-	"para": "At what layer data encrypted and it is scrumbled to provide security against hackers?"
+	"para": "At what layer is the data encrypted and scrumbled to provide security against hackers?"
 },
   "answer": {
 	"image": "../images/card09_encrypt_presentation_layer.jpg",

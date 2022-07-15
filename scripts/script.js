@@ -247,6 +247,7 @@ function correctAnswer(){
 	score = score + 1;
 	scoreElement.textContent= score;
 
+
 	//Increase the card index
 	cardIndex++;
 
