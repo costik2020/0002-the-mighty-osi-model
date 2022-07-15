@@ -90,6 +90,8 @@ Need to implement this:
 
 	//Grab the score element
 	let scoreElement = document.querySelector(".scoreNumber");
+	let scoreDiv = document.querySelector(".score");
+	//scoreDiv.style.color="red";
 
 	// When the interface initially starts, make all the buttons hidden.
 	showAnswerBtn.style.display="none";
@@ -246,6 +248,10 @@ function correctAnswer(){
 	// Update the score
 	score = score + 1;
 	scoreElement.textContent= score;
+	if (score >= 0){
+		scoreDiv.style.color="green";
+	}
+
 
 
 	//Increase the card index
@@ -282,6 +288,10 @@ function wrongAnswer(){
 	// Update the score
 	score = score - 1;
 	scoreElement.textContent= score;
+	if (score < 0){
+		scoreDiv.style.color="red";
+	}
+
 
 	//Increase the card index
 	cardIndex++;
