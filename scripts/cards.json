@@ -12,99 +12,99 @@
   },
   {
 	"question": {
-	  "image": "../images/card01_cisco_switch.jpg",
+	  "image": "images/card01_cisco_switch.jpg",
 	  "para": "At what layer of the OSI Model does a Switch work? And why is found at that layer?"
   },
 	"answer": {
-	  "image": "../images/card01_answer_switch.jpg",
+	  "image": "images/card01_answer_switch.jpg",
 	  "para": "A Switch can be found at Layer 2 also known as the Data Link Laywer. It is found at that layer becasue as a switch it is using MAC addresses to know where to send a frame of data."
 
   }
 },
 {
   "question": {
-	"image": "../images/card02_nic_network_interface_card.jpg",
+	"image": "images/card02_nic_network_interface_card.jpg",
 	"para": "At what layer of OSI does a NIC operate?"
 },
   "answer": {
-	"image": "../images/card02_nic_network_interface_card.jpg",
+	"image": "images/card02_nic_network_interface_card.jpg",
 	"para": "A NIC (Network Interface Card) usually operates at layer 2 Data Link layer of OSI Model."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card03_firewall.png",
+	"image": "images/card03_firewall.png",
 	"para": "At what layer of OSI Model does a Firewall backbone device operates?"
 },
   "answer": {
-	"image": "../images/card03_answer_firewall.png",
+	"image": "images/card03_answer_firewall.png",
 	"para": "Since firewalls essentially filter data, the answer depends on what kind of filtering you do. \n If you filter based on IP address (for example), you can say that  your firewall is filtering at Layer 3. \n If you filter specific ports,  you can say you're filtering at Layer 4. \n If your firewall inspects  specific protocol states or data, you can say it operates at Layer 7."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card04_modem600px.png",
+	"image": "images/card04_modem600px.png",
 	"para": "At which layer does a Modem operate?"
 },
   "answer": {
-	"image": "../images/card04_modem600px.png",
+	"image": "images/card04_modem600px.png",
 	"para": "Usually a Modem will operate at Layer 1 of OSI. In more detail a Modem will Modulate digital signals to analog signals when sending bits and a Modem will Demodulate analog signals to digital signals when receiving bits from the ISP cable (coaxial cable/dsl cable/fiber cable)."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card_05_pdu_layers.jpg",
+	"image": "images/card_05_pdu_layers.jpg",
 	"para": "At what OSI layer is a Frame PDU processed?"
 },
   "answer": {
-	"image": "../images/card05_wifi_frame_my_diagram.jpg",
+	"image": "images/card05_wifi_frame_my_diagram.jpg",
 	"para": "A frame can be found at Layer 2, Data-Link layer."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card06_packet.jpg",
+	"image": "images/card06_packet.jpg",
 	"para": "What network backbone device manages the IP packets PDUs inside a network?"
 },
   "answer": {
-	"image": "../images/card00-question.png",
+	"image": "images/card00-question.png",
 	"para": "That would be a Router."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card_07_tcp_three_way_handshake.jpg",
+	"image": "images/card_07_tcp_three_way_handshake.jpg",
 	"para": "At what layer is a TCP segment PDU created?"
 },
   "answer": {
-	"image": "../images/card_05_pdu_layers.jpg",
+	"image": "images/card_05_pdu_layers.jpg",
 	"para": "A TCP segments are found at the Transport layer."
 
 	}
 },
 {
   "question": {
-	"image": "../images/card09_encrypt_presentation_layer.jpg",
+	"image": "images/card09_encrypt_presentation_layer.jpg",
 	"para": "At what layer is the data encrypted and scrumbled to provide security against hackers?"
 },
   "answer": {
-	"image": "../images/card09_encrypt_presentation_layer.jpg",
+	"image": "images/card09_encrypt_presentation_layer.jpg",
 	"para": "At layer 6 - Presentation Layer of OSI"
 
 	}
 },
 {
   "question": {
-	"image": "../images/card_09_hub_device.png",
+	"image": "images/card_09_hub_device.png",
 	"para": "What is a Hub networking device and at what OSI layer is found operating?"
 },
   "answer": {
-	"image": "../images/card_09_hub_device.png",
+	"image": "images/card_09_hub_device.png",
 	"para": "A hub device clones all the data that it recives and it will send it out on all its ports. You could say that a Hub is a bits cloning machine. It operates at layer 1 the physical OSI layer."
 
 	}
