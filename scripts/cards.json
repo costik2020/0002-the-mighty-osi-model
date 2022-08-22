@@ -1,11 +1,11 @@
 [
   {
     "question": {
-		"image": "../images/card00-question.png",
+		"image": "images/card00-question.png",
 		"para": "At what OSI layer does a Router live?"
 	},
     "answer": {
-		"image": "../images/card00-answer.png",
+		"image": "images/card00-answer.png",
 		"para": "A Rounter can be found at layer 3 aka Network layer."
 
 	}
